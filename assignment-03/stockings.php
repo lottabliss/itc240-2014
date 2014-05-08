@@ -1,5 +1,14 @@
 <!doctype html>
 <html>
+<style>
+img{
+max-width:100px;
+min-width:100px;
+max-height:100px;
+min-height:100px;
+
+}
+</style>
 <body>
 <h1>Stockings!</h1>
 <a href="?show=picture">Picture view</a>

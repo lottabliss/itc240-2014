@@ -1,4 +1,4 @@
 
 <li>
-<img src="<?= $picture["Item"]?>">
+<img src="<?= $stock["picture"]?>">
 <b><?= $stock["Item"] ?></b>
