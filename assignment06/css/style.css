@@ -1,0 +1,347 @@
+body {
+	background: url("../images/kitty.jpg") #000 no-repeat left top;
+	background-size: 100%;
+	margin: 0 auto; /*center*/
+	font-variant: small-caps;
+	font-family: Vrinda;
+
+
+}
+#whitebg{
+float:right;
+background-color: rgb(255,255, 200);
+max-width:500px;
+padding:20px;
+
+}
+#white{
+float:left;
+background-color:rgb(255,255,200);
+padding:2px;
+max-width;200px;
+
+}
+#showforphone{
+	display:none;
+}
+#showforphone1{
+	display:none;
+}
+#hideforphone{
+	display:inherit;
+}
+
+/*text properties*/
+h1 {
+	padding-top: 100px;
+	padding-bottom: 30px;
+	text-align: center;
+	/* need a background color so the heading shows up/ but want it transparent (opacity:.5;)
+	 * background-color:teal;
+	 */
+	max-width: 500px;
+	margin: 0 auto;
+}
+a {
+	text-decoration:none
+}
+
+#imgtext{
+color:white;
+padding:1%;
+}
+
+a:link {
+	color: #E8E8EE;
+	font-size: large;
+}/* unvisited link */
+a:visited {
+	color: #E8E8EE;
+}/* visited link */
+a:hover {
+	color:#cccc00;
+}/* mouse over link */
+a:active {
+	color: #E8E8EE;
+}/* selected link */
+/*div properties*/
+	/*#A98436*/
+	
+#left a:link{
+	color:#a98436;
+}
+#left a:visited{
+	color:#a98436;
+}
+#left a:hover{
+	color:#080808;
+}
+#left a:active{
+	color:#a98436;
+}
+#one, #two, #three {
+	width: 33.3%;
+	/*background-color:grey;*/
+}
+
+#one, #two {
+	float: left;
+}
+#three {
+	float: right;
+	clear: none;
+}
+#box {
+	margin: 0 auto; /*center*/
+	text-align: center;
+	background-color: black;
+	color: white;
+	max-width: 300px;
+	min-width: 300px;
+	max-height: 300px;
+	min-height: 300px;
+	color: black;
+	border: 13px solid #333 color :#000;
+	/* Fallback for web browsers that don't support RGBa */
+	background-color: rgb(0, 0, 0);
+	/* RGBa with 0.6 opacity */
+	background-color: rgba(0, 0, 0, 0.6);
+	/* For IE 5.5 - 7*/
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
+	/* For IE 8*/
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
+
+}
+
+.box {
+	/*grey background box behind pictures on home page onlyl*/
+
+	padding-top: 400px;
+	box-shadow: 20px 20px 14px rgba(0,0,0,.3);
+	margin-left: 10px max-width :10%
+	margin-bottom: 10%;
+
+}
+.boxmain, .boxmainlong {
+	/*this is the box where there is text*/
+	margin: 0 auto; /*center*/
+	background-color: #fff;
+	/*background:url("../images/seattle.jpg")#fff;*/
+	width: 100%;
+	color: black;
+	padding:10px;
+	margin-top: 0%;
+	text-align: center;
+	color: #000;
+	/* Fallback for web browsers that don't support RGBa */
+	background-color: rgb(0, 0, 0);
+	/* RGBa with 0.6 opacity */
+	background-color: rgba(0, 0, 0, 0.6);
+	/* For IE 5.5 - 7*/
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
+	/* For IE 8*/
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
+}
+.boxmain{
+	max-height: 900px;
+	min-height: 300px;
+}
+.boxmainlong{
+	max-height:1800px;
+	min-height:800px;
+}
+
+nav {
+	/*this is the transparent gray band behind the top nav bar - used rgb because the opacity was affecting my text color too*/
+	text-align: center;
+	padding: 10px;
+	background-color: #000000;
+	color: #000;
+	/* Fallback for web browsers that don't support RGBa */
+	background-color: rgb(0, 0, 0);
+	/* RGBa with 0.6 opacity */
+	background-color: rgba(0, 0, 0, 0.6);
+	/* For IE 5.5 - 7*/
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
+	/* For IE 8*/
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
+}
+
+#left {
+	float: left;
+	max-width: 55%;
+	text-align: justify;
+	background:white;
+	padding:2%;
+}
+#right {
+	float: right;
+	max-width:45%;
+	margin-left: 15px;
+	margin-right: 20px;
+	background-color:yellow;
+}
+#right2 {
+	float: right;
+	width:50%;
+	margin-left: 15px;
+	margin-right: 20px;
+	background-color:#cccc00;
+}
+/*image properties*/
+.thumb {
+	max-width: 100px;
+	min-width: 100px;
+	max-height: 100px;
+	min-height: 100px;
+	overflow: visible;
+	padding: 20px;
+	margin-left: 10px;
+	border: 6px solid;
+}
+
+.picsec {
+	
+	max-width: 250px;
+	max-height: 250px;
+	min-height: 250px;
+	max-height: 250px;
+	padding: 10px;
+}
+
+
+
+/*tablet*/
+@media all and (max-width: 780px) {
+
+#one, #two { 
+float: left;
+width:50%;
+}
+
+#three{
+float:left;
+width:100%;
+margin: 0 auto;
+
+}
+#box{
+margin: 0 auto; /*center*/
+text-align:center;
+background-color:black;
+color:white;
+max-width:200px;
+min-width:200px;
+max-height:200px;
+min-height:200px;
+margin-bottom:40px;
+}
+
+
+#left{
+	max-width: 90%;
+margin:0 auto;
+}
+#right{
+	float:left;
+margin:0 auto;
+max-width:100%;
+padding:15%;
+}
+#right2{
+	float:left;
+margin:0 auto;
+max-width:100%;
+padding:25%;
+}
+.picsec {
+	
+	max-width: 180px;
+	max-height: 180px;
+	min-height: 180px;
+	max-height: 180px;
+	padding: 0px;
+	padding-top:0px;
+}
+}
+/*For iphone:*/
+/*phone*/
+@media all and (max-width: 480px) {
+body{
+	background-color:white;
+}
+#showforphone{
+	display:block;
+}
+#hideforphone{
+	display:none;
+}
+#showforphone1{
+			/*these are iphone buttons*/
+			display: inline-block;
+			-webkit-border-radius: 12px;
+			-webkit-box-shadow: 2px 2px 3px #999; 
+			border: solid 3px rgb(110,110,110);
+			background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(74,74,74,0.85)), color-stop(0.5, rgba(20,20,20,0.75)), color-stop(0.5, rgba(2,2,2,0.75)), to(rgba(14,14,14,0.75))); 
+			color: #fff;
+			text-shadow: #000 0 1px 0;
+			font: bold 16px/20px Helvetica, Sans-serif;
+			padding: 9px 11px;
+			min-width:250px;
+			text-align:center;
+		}
+	
+		
+	/*display:block;(old one)
+	background:#556677;/*formerly #cccc00 */
+	/*padding:4px;
+	width:300px;
+	color:#000;
+	-webkit-transition: background-color .4s linear;
+	margin-bottom:2px;
+
+	
+}
+#showforphone1:hover{
+	background:#667788;/*formerly #000
+}*/
+	#showforphone1:hover {
+			background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(135,148,203,0.85)), color-stop(0.5, rgba(34,56,159,0.75)), color-stop(0.5, rgba(0,27,145,0.75)), to(rgba(2,59,152,0.65)));  
+			color: #fff;
+			text-shadow: #000 0 1px 0;
+			-webkit-box-shadow: inset rgba(207,207,255,0.75) 0px 1px 1px;
+		}
+#left a:hover{
+	color:#000;
+}
+h1{
+	color:#888;
+}
+#one, #two, #three { 
+float: left;
+width:100%;
+}
+
+#floatright{
+float:left;
+}
+#left{
+	max-width: 90%;
+text-align:left;
+}
+#right{
+	max-width:100%;
+padding:0%;
+float:left;
+}
+.picsec {
+	
+	max-width: 150px;
+	max-height: 150px;
+	min-height: 150px;
+	max-height: 150px;
+	padding: 0px;
+	padding-top:15px;
+}
+}
+
