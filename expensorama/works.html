@@ -1,0 +1,309 @@
+
+<!doctype html><!--ok to add cookie here-->
+<html>
+	<head>
+		<script src="js/jquery-1.11.0.min.js"></script>
+		<script src="js/jquery-ui.min.js"></script>
+		<script src="js/jquery.validate.min.js"></script>
+		<script src="js/jquery.ui.core.js"></script>
+		<script src="js/jquery.ui.spinner.js"></script>
+		<script src="js/jquery.ui.datepicker.js"></script>
+		<script src="showhide.js"></script>
+
+		<script type="text/javaScript">
+			function alertfunny(){
+				alert("ha ha, I'm not that good! Maybe next lesson? :)");
+			}
+
+			function changeClass(){
+			document.getElementById("rightno").setAttribute("id", "righto");
+			}
+			function closeit(){
+			document.getElementById("righto").setAttribute("id", "rightno");
+			}
+		</script>
+		<script type="text/javaScript">
+			$(document).ready(function(){
+			$("#contact-form").validate();
+			$("#currency").change(function() {
+			$("#spinner").spinner( "option", "culture", $( this ).val() );		
+			$("#spinner").spinner({
+			min: 1,
+			max: 100000000,
+			step: 25,
+			start: 1000,
+			numberFormat: "C"});
+			$("#datepicker").datepicker();
+			});
+		</script>
+
+	<style>
+		body {
+			background: black;
+			color: grey;
+			font-family:"Trebuchet MS";
+			font-variant:small-caps;
+			font-weight: bold;
+		}
+		.hidden{
+			display:none;
+		}
+		.show{
+			display:block;
+		}
+		
+		a {
+			color: #000000;
+/*how do I get rid of the underline again?*/
+		}
+		#righto{
+			position:absolute;
+			left:60%;
+			top:8%;
+			display:block;
+			float:right;
+			max-width:500px;
+			padding-right:100px;
+		}
+
+		#rightno{
+			display:none;
+		}
+		h1{
+			padding:2%;
+			font-family:"Trebuchet MS";
+			background-color:grey;
+			text-align:center;
+			border:2px solid #bf000f;
+		}
+		#roundy {
+			min-width: 300px;
+			max-width: 300px;
+			border: 5px solid #bf000f;
+			border-radius: 4px;
+			background-color: grey;
+			color: #000000;
+			float: left  :
+
+		}
+		input, button, textarea {
+			color: black;
+			border: 1px solid #556677;
+			border-radius: 3px;
+			padding-left: 5px;
+			padding-right: 15px;
+			padding-top: 2px;
+		}
+		/*needs to be mobilized*/
+		</style>
+		</head>
+		<body>
+		<?php include(password.php);
+		$mysql=new mysqli("localhost","cquinn03",$mysql_password,"cquinn03");
+		?>
+
+		<form id="contact-form" method="post" action="index.html">
+		<div id="roundy">
+			<h1>Expense-O-Rama</h1>
+			<input type="submit" value="Add Expense">
+			<a href="index.html#righto"><input type="button" value="View Expenses" onClick="changeClass();" /></a>
+				<br><label for="type">type of expense:</label>
+				<p>
+					<input type="radio" name="typeofexpense" value="snacks" required>
+					snacks(includes lattes)
+					<br>
+					<input type="radio" name="typeofexpense" value="utilitybills" required>
+					utility bills
+					<br>
+					<input type="radio" name="typeofexpense" value="merchandise" required>
+					merchandise
+					<br>
+					<input type="radio" name="typeofexpense" value="parking/transportation" required>
+					parking
+					<br>
+					<input type="radio" name="typeofexpense" value="rent" required>
+					rent
+					<br>
+					<input type="radio" name="typeofexpense" value="advertising" required>
+					advertising
+					<br>
+					<input type="radio" name="typeofexpense" value="other" required>
+					other
+				</p>
+				<p>
+				<table>
+					<tr>
+					<td><label for="expense">detail:</label>	
+					</td>
+					<td><input type="text" name="expense">	
+					</td>
+					</tr>
+					<tr>
+					<td>location of expense:
+					</td>
+					<td><label for="location" class="error"><select>
+							<option name="location" value="work">work</option>
+							<option name="location" value="home">home</option>
+							<option name="location" value="outside">en route</option>
+							<option name="location" value="clienthome">clienthome</option>
+							<option name="location" value="other">other</option>
+						</select> </label>	
+					</td>
+					</tr>
+					<tr>
+					<td>amount of expense:	
+					</td>
+					<td><label for "amount" class="error">
+						<input id="spinner" value="01.00" type="number" name="money" placeholder="amount" required>
+					</label>
+					<!--do this if you can find the jquery spinner
+					<p>
+					<label for="spinner">Amount to donate:</label>
+					<input id="spinner" name="spinner" value="5">
+					</p>-->	
+					</td>
+					</tr>
+					<tr>
+						<!--see if this can work in firefox - also do a button that says now or choose date
+							then have the date pop out only if it's not NOW (possibly checked)-->
+					<td><label for "date">date of Expense:</label>
+					</td>
+					<td><input id="datepicker" type="date" name="date" placeholder="date" required></label>			
+					</td>
+					</tr>
+					<tr>
+					<td><label>comments: 
+					</td>
+					<td><textarea id="comments"></textarea> </label>
+					</td>
+					</tr>
+				</table>
+			</div><!--end of roundy-->
+		</form>
+<div id="rightno">EXPENSES
+	<input type="button" value="close" onClick="closeit();" /></a>
+		<div>
+			Sort by:<form>
+						<select id="sortby">
+							<option value="0">Catagory</option>
+							<option value="1">Day</option>
+				            <option value="2">Location</option>
+			          	</select>
+			          </form>
+			<a href="?sort=typeofexpense">Type of expense</a>
+			<a href="?sort=location"> Location</a>
+			<a href="?sort=date">Date</a>
+			<a href="?sort=money">Amount</a>
+		</div>
+<p id="whatitis">how will you sort?</p>
+<div id="sortbylocation" class="">
+	sub-total for work:<?=$work["worksum"]?>
+	<br>
+	sub-total for home:<?=$home["homesum"]?>
+	<br>
+	sub-total for client:<?=$client["clientsum"]?>
+	<br>
+	sub-total for en route:<?=$route["routesum"]?>
+	<br>
+	sub-total for other:<?=$other["othersum"]?>
+	<hr>
+	Total Expense:<?= $sum["sum"] ?>
+	<hr>
+	The area you spent the most on was:
+	<?= $max["expensecost"] ?>
+	<hr>
+	Total number of entries:
+	<?= $count["rows"] ?>
+</div>
+<!--
+
+if (isset($_REQUEST["sort"])) {
+$column = $_REQUEST["sort"];
+}
+$column = $mysql->real_escape_string($column);
+
+$whitelist = ["calories" => true,"id" => true,"type" => true];
+
+if (!isset($whitelist[$column])) {
+$column = 'calories';
+}
+
+$prepared = $mysql->prepare("SELECT * FROM tracker_food ORDER BY $column DESC;");
+//don't need to bind - no parameters!
+$prepared->execute();
+$results = $prepared->get_result();
+
+foreach ($results as $row) {
+?>
+<div>
+	<?= htmlentities($row["expense"]) ?>
+	calories from
+	<?= htmlentities($row["typeofexpense"]) ?>
+</div>
+<?php
+}
+
+$sumQuery = $mysql->prepare('SELECT SUM(calories) AS sum FROM tracker_food;');
+//don't need to bind, no parameters
+$sumQuery->execute();
+//results don't come back from DB until get_result
+$sumResult = $sumQuery->get_result();
+
+$sum = $sumResult->fetch_array();
+
+$maxQuery = $mysql->prepare('SELECT MAX(expense) AS expense FROM business WHERE expense < 500;');
+$maxQuery->execute();
+$maxResult = $maxQuery->get_result();
+$max = $maxResult->fetch_array();
+
+$countResult = $mysql->query('SELECT COUNT(*) AS rows FROM tracker_food WHERE calories >= 200 AND calories <= 800;');
+$count = $countResult->fetch_array();
+?>-->
+<div id="sortbycatagory" class="">
+	sub-total for snacks:<?=$snack["snacksum"]?>
+	<br>
+	sub-total for utility bills:<?=$util["utilsum"]?>
+	<br>
+	sub-total for merchandise:<?=$merch["merchsum"]?>
+	<br>
+	sub-total for parking:<?=$park["parksum"]?>
+	<br>
+	sub-total for rent:<?=$rent["rentsum"]?>
+	<br>
+	sub-total for advertising:<?=$ad["adsum"]?>
+	<br>
+	sub-total for other:<?=$other["othersum"]?>
+	<hr>
+	Total Expense:<?= $sum["sum"] ?>
+	<hr>
+	The area you spent the most on was:
+	<?= $max["expensecost"] ?>
+	<hr>
+	Total number of entries:
+	<?= $count["rows"] ?>
+</div>
+<div id="sortbyday" class=""><!--not sure if I could do week/month with an extra drop down-->
+	sub-total for 6/01/14:<?=?>
+	<br>
+	sub-total for 6/02/14:<?=?>
+	<br>
+	sub-total for 6/03/14:<?=?>
+	<br>
+	sub-total for 6/04/14:<?=?>
+	<br>
+	sub-total for 6/05/14:<?=?>
+	<hr>
+	Total Expense:<?= $sum["sum"] ?>
+	<hr>
+	The day you spent the most was:
+	<?= $max["daycost"] ?>
+	<hr>
+	Total number of entries:
+	<?= $count["rows"] ?>
+</div>
+
+	</body>
+</html>
+
+<p><input type="button" value="show pie chart" onClick="alertfunny();"></input></p>
+</div></div>
